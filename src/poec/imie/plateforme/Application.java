@@ -5,110 +5,69 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
-import poec.imie.plateforme.entities.Group;
-import poec.imie.plateforme.entities.Student;
-
+import poec.imie.plateforme.entityManager.*;
+import poec.imie.plateforme.entities.*;
 
 public class Application {
 
-			
-		public static void main(String[] args) throws Exception {
-//	        File root = new File("/");
-//	        listContent(root, 0);
+	public static void main(String[] args) {
 
-	        File current = new File("./MyFile.txt");
-	        readFile(current);
-
-	        String message = "foo bar";
-	        current = new File("./MyFileWrite.txt");
-	        writeFile(current, message);
-	        readFile(current);
-	    }
-
-	    private static void writeFile(File file, String newLine) throws Exception {
-	        FileWriter fileWriter = new FileWriter(file);
-	        BufferedWriter buffer = new BufferedWriter(fileWriter);
-
-	        buffer.write(newLine);
-	        buffer.newLine();
-
-	        buffer.flush();
-	        buffer.write(newLine);
-	        buffer.newLine();
-
-	        buffer.close();
-	        fileWriter.close();
-	    }
-
-	    private static void readFile(File file) throws Exception {
-	        FileReader fileReader = new FileReader(file);
-	        BufferedReader buffer = new BufferedReader(fileReader);
-
-	        while (buffer.ready()) {
-	            String line = buffer.readLine();
-	            System.out.println(line);
-	        }
-
-	        buffer.close();
-	        fileReader.close();
-	    }
-
-
-	    private static void listFile(File file, int currentDepth, int maxtDepth) {
-
-	    }
-
-	    /**
-	     * List content of directory (Recursively).<p>
-	     * This method is deprecated, please use @{link Application.listFile()}.
-	     * @param file Path folder to list.
-	     * @param currentDepth Current Depth of recursive.
-	     * @deprecated
-	     */
-	    private static void listContent(File file, int currentDepth) {
-	        if (file.isDirectory() && currentDepth < 3) {
-	            ++currentDepth;
-	            String contents[] = file.list();
-	            if (contents != null) {
-	                for (int i = 0; i < contents.length; i++) {
-	                    File content = new File(file.getAbsolutePath() + "//" + contents[i]);
-
-	                    if (content.isDirectory()) {
-	                        listContent(content, currentDepth);
-	                    }
-
-	                    System.out.println(content.getAbsolutePath());
-	                }
-	            }
-	        }
-	    }
-
-	}
-
+		// Teacher author1 = new Teacher();
+		// Promotion promotion1 = new Promotion();
+		// Subject subj = new Subject(author1,promotion1, new String(), new
+		// Date());
+		//
+		// Storage storage= new Storage();
+		// Storage.addSubject(subj);
+		CategoryUser user1 = new CategoryUser(1,"Admin");
+		CategoryUser user2 = new CategoryUser(2,"Teacher");
+		CategoryUser user3 = new CategoryUser(3,"Studentr");
+		Teacher teach1 = new Teacher("G", "Mick","Gmick", user2, 200001);
+		Teacher teach2 = new Teacher("C", "Anto","Tanto", user2, 200002);
+		Teacher teach3 = new Teacher("P", "Yoan","Pyoan", user2, 200003);
+		Student stud1 = new Student("H", "Kahina","Hkahina", user3, 300001);
+		Student stud2 = new Student("D","Gwen","DGwen", user3, 300002);
+		Student stud3 = new Student("B", "Rhama", "BRrhama", user3,300003);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//        public Group(String groupName, Student numStudent) {
-//        	this.groupName;
-//            this.student.numStudent;
+		System.out.println("test user implementation");
+		System.out.println("========================");
+		System.out.println(teach1.toString());
+		System.out.println(teach2.toString());
+		System.out.println(teach3.toString());
+		System.out.println(stud1.toString());
+		System.out.println(stud2.toString());
+		System.out.println(stud3.toString());
+
+//		User object;
+//		object = new Teacher("Mick","alber",152656);
+//		object = new Admin("deni", "al","Mr","denial","xxxx");
+//	
+//		object = new Student("yo", "A", 56822);
 //
-//            System.out.println("Create a new group : " + this.groupName);
-//if (listStudent<=1){
-//	System.out.println("You can not create a group on your own");
-//} else { for (int i = 0; i < 2; i++) {
-//            	Student student1 = new Student(this.numStudent);
-//                this.listStudent.add(student1);
-//	}
-
+//		
+//	
+//		Subject subject1 = new Subject("JEE","Mick", "POEC","ecrire un programme java",20170201);
+//		System.out.println("Create a new Subject : "+"title :"+ this.title +"and author" + this.author + " for promotion : " +  this.promotion + " and description : " + this.description + "to make before : " + this.deadline);
+//		
+//		Homework Homework1 = new Homework("solution_JEE","yo","solution programme java",20161221);
+//		System.out.println("Create a new Homework : " + this.title + " and author : " +  this.author + " for Subject : " + this.subject_id + "deposed : " + this.deposedAT);
 	}
+}
+
+// public Group(String groupName, Student numStudent) {
+// this.groupName;
+// this.student.numStudent;
+//
+// System.out.println("Create a new group : " + this.groupName);
+// if (listStudent<=1){
+// System.out.println("You can not create a group on your own");
+// } else { for (int i = 0; i < 2; i++) {
+// Student student1 = new Student(this.numStudent);
+// this.listStudent.add(student1);
+// }
+
+	

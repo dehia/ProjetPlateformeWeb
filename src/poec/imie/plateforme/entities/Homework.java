@@ -2,18 +2,25 @@ package poec.imie.plateforme.entities;
 
 import java.util.Date;
 
-public class Homework<T> implements Document <T>{
+public class Homework implements Document{
 	private String title;
 	private Student author;
 	private Date deposedAT = new Date();
 	private Subject subject_id;
+	
 
-	public  Homework(String title, Student author, Subject subject_id) {
+	public  Homework() {
+		}
+	
+	public  Homework(String title, Student author,Date deposedAT, Subject subject_id) {
 	this.title=title;
 	this.author=author;
 	this.subject_id=subject_id;
-
-	}
+	this.deposedAT=new Date();
+	System.out.println("Create a new Homework : " + this.title + " and author : " +  this.author + " for Subject : " + this.subject_id + "deposed : " + this.deposedAT);
+    }
+	
+	
 
 	/**
 	 * @return the title
@@ -39,18 +46,21 @@ public class Homework<T> implements Document <T>{
 	public void setAuthor(Student author) {
 		this.author = author;
 	}
+	
 	/**
 	 * @return the deposedAT
 	 */
 	public Date getDeposedAT() {
 		return deposedAT;
 	}
+
 	/**
 	 * @param deposedAT the deposedAT to set
 	 */
 	public void setDeposedAT(Date deposedAT) {
 		this.deposedAT = deposedAT;
 	}
+
 	/**
 	 * @return the subject_id
 	 */
@@ -65,37 +75,37 @@ public class Homework<T> implements Document <T>{
 	}
 
 	@Override
-	public void writeDocument(T entity) {
+	public void writeDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void download(T entity) {
+	public void download() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void createDocument(T entity) {
+	public void createDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void addDocument(T entity) {
+	public void addDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void removeDocument(T entity) {
+	public void removeDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void researchDocument(T entity) {
+	public void researchDocument() {
 		// TODO Auto-generated method stub
 		
 	}

@@ -7,9 +7,35 @@ public abstract class User extends BaseItem{
 	protected String lastName;
 	protected String firstName;
 	protected String civility;
+	private CategoryUser category;
 	private String userName;
 	private String password;
 
+	 public User() {
+	       
+	    }
+	
+	 /** Constructor of User. */
+    public User(String lastName, String firstName,String userName) {
+        this.lastName = lastName;
+        this.firstName = firstName; 
+        this.userName = userName;  
+    }
+
+    /** Constructor of User. */
+    public User(String lastName, String firstName,String userName, CategoryUser category) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.userName = userName;  
+        this.category = category;
+    }
+    /**
+     * toString method for the User entity
+     */
+    @Override
+    public String toString() {
+    	return "Welcome User!!! Your Category User is " + category.getCategoryUser() + ", First Name is " + firstName + ", Last Name is " + lastName + ", User Name is " + userName ;
+    }
 	/**
 	 * @return the lastName
 	 */
@@ -70,4 +96,12 @@ public abstract class User extends BaseItem{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	/**
+	 * @param password the password to set
+	 */
+//	public void setPassword(String password) {
+//		PasswordEncoder crypto = new Md5PasswordEncoder();
+//		this.password = crypto.encodePassword(password, null);
+//	}
+
 }

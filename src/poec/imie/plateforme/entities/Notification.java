@@ -3,12 +3,12 @@ package poec.imie.plateforme.entities;
 public class Notification {
 		private String coreMessage;
 		private String titleMessage;
-		private int deadeline = 20170201;
+		private Subject deadeline;
 		 
 		 public Notification(String coreMessage, String titleMessage, int deadeline){
 			 this.coreMessage=coreMessage;
 			 this.titleMessage=titleMessage;
-			 this.deadeline=deadeline;
+			 this.getDeadeline();
 		 }
 
 		/**
@@ -40,18 +40,20 @@ public class Notification {
 		}
 
 		/**
-		 * @return the deadeline
+		 * @return the deadline
 		 */
-		public int getDeadeline() {
+		public Subject getDeadeline() {
 			return deadeline;
 		}
 
 		/**
-		 * @param deadeline the deadeline to set
+		 * @param deadeline the deadline to set
 		 */
-		public void setDeadeline(int deadeline) {
+		public void setDeadeline(Subject deadeline) {
 			this.deadeline = deadeline;
 		}
+
+	
 		 
 		 
 }

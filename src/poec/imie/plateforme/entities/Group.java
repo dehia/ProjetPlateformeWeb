@@ -11,17 +11,30 @@ public class Group extends BaseItem {
 	// private Student student;
 	protected List<Student> listStudent = new ArrayList<Student>();
 
+	public Group() {
+
+	}
+
 	public Group(String groupName) {
-        super();
-        this.groupName = groupName;
-        
-       /* public void addStudent(List<Student> listStudent) {
-            this.groupName.add(numStudent);
-            System.out.println("Create a new group : " + this.groupName);
-        }  */
-    
-}
-           
+		super();
+		this.groupName = groupName;
+
+		/*
+		 * public void addStudent(List<Student> listStudent) {
+		 * this.groupName.add(numStudent);
+		 * System.out.println("Create a new group : " + this.groupName); }
+		 */
+
+	}
+
+	public void create() {
+
+	}
+	
+	public void delete() {
+
+	}
+
 
 	/**
 	 * @return the numGroup

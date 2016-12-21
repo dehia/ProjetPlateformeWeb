@@ -1,10 +1,11 @@
 package poec.imie.plateforme.entities;
-public interface Document <T>{
-	public void writeDocument(T entity);
-	public void download(T entity);
-	public void createDocument(T entity);
-	public void addDocument(T entity);
-	public void removeDocument(T entity);
-	public void researchDocument(T entity);
+
+public interface Document {
+	public void writeDocument();
+	public void download();
+	public void createDocument();
+	public void addDocument();
+	public void removeDocument();
+	public void researchDocument();
 
 }

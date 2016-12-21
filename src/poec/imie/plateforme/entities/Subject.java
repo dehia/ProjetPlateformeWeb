@@ -1,21 +1,31 @@
 package poec.imie.plateforme.entities;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-public class Subject <T> implements Document <T>{
+public class Subject implements Document {
     private Integer Id;
     private Teacher author;
+    private String title;
     private Date deadline;
     protected Promotion promotion;
     private String description;
+    private File subjectwriting;
 
-     public Subject(Teacher author, Promotion promotion,String description,Date deadline) {
+    public Subject(){
+    	
+    }
+     public Subject(String title,Teacher author, Promotion promotion,String description,Date deadline) {
             this.author = author;
             this.promotion = promotion;
             this.description = description;
             this.deadline = deadline;
-            System.out.println("Create a new Subject : " + this.author + " for promotion : " +  this.promotion + " and description : " + this.description + "to make before : " + this.deadline);
+            this.title = title;
+            System.out.println("Create a new Subject : "+"title :"+ this.title +"and author" + this.author + " for promotion : " +  this.promotion + " and description : " + this.description + "to make before : " + this.deadline);
         }
+   
         /**
         * @return the id
         */
@@ -57,6 +67,20 @@ public class Subject <T> implements Document <T>{
        public void setDeadline(Date deadline) {
            this.deadline = deadline;
        }
+       
+       
+       /**
+   	 * @return the title
+   	 */
+   	public String getTitle() {
+   		return title;
+   	}
+   	/**
+   	 * @param title the title to set
+   	 */
+   	public void setTitle(String title) {
+   		this.title = title;
+   	}
 
        /**
         * @return the promotion
@@ -87,40 +111,41 @@ public class Subject <T> implements Document <T>{
        }
 
 	@Override
-	public void writeDocument(T entity) {
+	public void writeDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void download(T entity) {
+	public void download() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void createDocument(T entity) {
+	public void createDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void addDocument(T entity) {
+	public void addDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void removeDocument(T entity) {
+	public void removeDocument() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void researchDocument(T entity) {
+	public void researchDocument() {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 
    }

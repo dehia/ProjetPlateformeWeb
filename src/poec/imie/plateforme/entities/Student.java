@@ -4,6 +4,21 @@ public class Student extends User {
 	private int numStudent;
 	private Group group;
 	private Promotion promotion;
+	
+	public Student() {
+		super();
+	}
+	public Student(String lastName, String firstName, String userName,CategoryUser category,int numStudent) {
+		super(lastName,firstName,userName,category);
+		this.numStudent = numStudent;
+	}
+    /**
+     * toString method for the User entity
+     */
+    @Override
+	public String toString() {
+    	return super.toString()+ ", num Student is" + this.numStudent;
+    }
 	/**
 	 * @return the numStudent
 	 */
