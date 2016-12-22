@@ -8,6 +8,9 @@ public class Student extends User {
 	public Student() {
 		super();
 	}
+	public Student(String lastName, String firstName) {
+		super(lastName,firstName);
+	}
 	public Student(String lastName, String firstName, String userName,CategoryUser category,int numStudent) {
 		super(lastName,firstName,userName,category);
 		this.numStudent = numStudent;

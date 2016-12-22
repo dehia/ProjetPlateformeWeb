@@ -14,7 +14,11 @@ public abstract class User extends BaseItem{
 	 public User() {
 	       
 	    }
-	
+	 /** Constructor of User. */
+	    public User(String lastName, String firstName) {
+	        this.lastName = lastName;
+	        this.firstName = firstName;  
+	    }
 	 /** Constructor of User. */
     public User(String lastName, String firstName,String userName) {
         this.lastName = lastName;
@@ -32,10 +36,10 @@ public abstract class User extends BaseItem{
     /**
      * toString method for the User entity
      */
-    @Override
-    public String toString() {
-    	return "Welcome User!!! Your Category User is " + category.getCategoryUser() + ", First Name is " + firstName + ", Last Name is " + lastName + ", User Name is " + userName ;
-    }
+//    @Override
+//    public String toString() {
+//    	return "Welcome User!!! Your Category User is " + category.getCategoryUser() + ", First Name is " + firstName + ", Last Name is " + lastName + ", User Name is " + userName ;
+//    }
 	/**
 	 * @return the lastName
 	 */
