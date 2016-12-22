@@ -1,4 +1,5 @@
 package fr.imie.poecpoei.ldap;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -42,8 +43,7 @@ public class Test_ldap {
 			// LdapContext
 			LdapContext ctx = new InitialLdapContext(environnement, null);
 			// Filtre du LDAP
-			NamingEnumeration<SearchResult> userAnswer = ctx
-					.search("OU=2016-2017-JEE,OU=POEC,OU=Eleves,OU=Utilisateurs,OU=Formation,OU=RENNES,OU=Sites", null);
+			NamingEnumeration<SearchResult> userAnswer = ctx.search("OU=2016-2017-JEE,OU=POEC,OU=Eleves,OU=Utilisateurs,OU=Formation,OU=RENNES,OU=Sites", null);
 			// Parcourir tous les Utilisateurs
 			while (userAnswer.hasMoreElements()) {
 				SearchResult sr = (SearchResult) userAnswer.next();
@@ -51,18 +51,26 @@ public class Test_ldap {
 				if (attrs != null) {
 					try {
 						// Récupération des attributs
-						String lastName = "", firstName="";
+						String lastName = "", firstName = "", userName="";
 						for (NamingEnumeration ae = attrs.getAll(); ae.hasMore();) {
 							Attribute attr = (Attribute) ae.next();
 							if (attr.getID().equals("sn")) {
-								//System.out.println(attr.get(0).toString());
+								// System.out.println(attr.get(0).toString());
 								lastName = attr.get(0).toString();
-								users.add(new Student(lastName, firstName));
-								//System.out.println(users.toString());
+								users.add(new Student(lastName, firstName,userName));
+								// System.out.println(users.toString());
+							}
+							if (attr.getID().equals("givenName")) {
+								// System.out.println(attr.get(0).toString());
+								firstName = attr.get(0).toString();
 							}
 							if (attr.getID().equals("givenName")) {
 								//System.out.println(attr.get(0).toString());
 								firstName = attr.get(0).toString();
+							}
+							if (attr.getID().equals("mail")) {
+								//System.out.println(attr.get(0).toString());
+								userName = attr.get(0).toString();
 							}
 						}
 					} catch (NamingException e) {
@@ -76,13 +84,12 @@ public class Test_ldap {
 			System.err.println("Problème de connexion");
 			e.printStackTrace();
 		}
-		for(Iterator<Student> i = users.iterator(); i.hasNext(); ) {
-		    User item = i.next();
-		    System.out.println(item.getFirstName()+" "+ item.getLastName());
+		for (Iterator<Student> i = users.iterator(); i.hasNext();) {
+			User item = i.next();
+			System.out.println(item.getFirstName() + " " + item.getLastName()+ " " + item.getUserName());
 		}
-		
+
 		System.out.println(users.size());
-		
 
 	}
 }
