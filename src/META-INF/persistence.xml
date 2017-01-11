@@ -15,9 +15,9 @@
         </properties>
 	</persistence-unit>-->
 	
-	<persistence-unit name="imiejpa_PU"
+	<persistence-unit name="PPW_PU"
 		transaction-type="JTA">
-		<jta-data-source>jdbc/webdemojpa_resource</jta-data-source>
+		<jta-data-source>jdbc/webdemojpa2_resource</jta-data-source>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 	
 		<properties>

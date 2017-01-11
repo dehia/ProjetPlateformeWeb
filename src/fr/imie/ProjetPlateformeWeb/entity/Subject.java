@@ -5,8 +5,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Subject implements Document {
-    private Integer Id;
+public class Subject extends Document {
+    public Subject(Object doc) {
+		super(doc);
+		// TODO Auto-generated constructor stub
+	}
+
+	private Integer Id;
     private Teacher author;
     private String title;
     private Date deadline;
@@ -14,18 +19,18 @@ public class Subject implements Document {
     private String description;
     private File subjectwriting;
 
-    public Subject(){
-    	
-    }
-     public Subject(String title,Teacher author, Promotion promotion,String description,Date deadline) {
-            this.author = author;
-            this.promotion = promotion;
-            this.description = description;
-            this.deadline = deadline;
-            this.title = title;
-            System.out.println("Create a new Subject : "+"title :"+ this.title +"and author" + this.author + " for promotion : " +  this.promotion + " and description : " + this.description + "to make before : " + this.deadline);
-        }
-   
+//    public Subject(){
+//    	
+//    }
+//     public Subject(String title,Teacher author, Promotion promotion,String description,Date deadline) {
+//            this.author = author;
+//            this.promotion = promotion;
+//            this.description = description;
+//            this.deadline = deadline;
+//            this.title = title;
+//            System.out.println("Create a new Subject : "+"title :"+ this.title +"and author" + this.author + " for promotion : " +  this.promotion + " and description : " + this.description + "to make before : " + this.deadline);
+//        }
+//   
         /**
         * @return the id
         */
@@ -109,42 +114,42 @@ public class Subject implements Document {
        public void setDescription(String description) {
            this.description = description;
        }
-
-	@Override
-	public void writeDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void download() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void createDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void researchDocument() {
-		// TODO Auto-generated method stub
-		
-	}
+//
+//	@Override
+//	public void writeDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void download() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void createDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void addDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void removeDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void researchDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
 	
 
 

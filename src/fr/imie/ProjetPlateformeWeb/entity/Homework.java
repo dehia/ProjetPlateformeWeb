@@ -3,22 +3,27 @@ package fr.imie.ProjetPlateformeWeb.entity;
 import java.util.Date;
 
 public class Homework extends Document{
+	public Homework(Object doc) {
+		super(doc);
+		// TODO Auto-generated constructor stub
+	}
 	private String title;
 	private Student author;
 	private Date deposedAT = new Date();
 	private Subject subject_id;
 	
 
-	public  Homework() {
-		}
-	
-	public  Homework(String title, Student author,Date deposedAT, Subject subject_id) {
-	this.title=title;
-	this.author=author;
-	this.subject_id=subject_id;
-	this.deposedAT=new Date();
-	System.out.println("Create a new Homework : " + this.title + " and author : " +  this.author + " for Subject : " + this.subject_id + "deposed : " + this.deposedAT);
-    }
+//	public  Homework() {
+//		
+//		}
+//	
+//	public  Homework(String title, Student author,Date deposedAT, Subject subject_id) {
+//	this.title=title;
+//	this.author=author;
+//	this.subject_id=subject_id;
+//	this.deposedAT=new Date();
+//	System.out.println("Create a new Homework : " + this.title + " and author : " +  this.author + " for Subject : " + this.subject_id + "deposed : " + this.deposedAT);
+//    }
 	
 	
 
@@ -74,41 +79,41 @@ public class Homework extends Document{
 		this.subject_id = subject_id;
 	}
 
-	@Override
-	public void writeDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void download() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void createDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void addDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void removeDocument() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void researchDocument() {
-		// TODO Auto-generated method stub
-		
-	}
+//	@Override
+//	public void writeDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void download() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void createDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void addDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void removeDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
+//
+//	@Override
+//	public void researchDocument() {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	
 	
